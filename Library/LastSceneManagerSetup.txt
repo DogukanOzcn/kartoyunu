@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/KartGame/BaslangicSayfasi.unity
+- path: Assets/Scenes/BaslangicSayfasi 2.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

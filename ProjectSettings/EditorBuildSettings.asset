@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/BaslangicSayfasi 2.unity
+    guid: f475e2e6135ae2940a42989ed3cd969c
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: 50c7b7de4cd3ed941a44d7adafdf2cfd
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: 96ac7e2d3fe9da5409bd5f8a657b1cd3, type: 2}
