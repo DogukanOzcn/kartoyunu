@@ -1,16 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     const int MAX_QUESTION_COUNT = 2;
-     
+    const int MAX_OPTIONS_COUNT = 4;
+
+    [SerializeField] GameObject resultPanel;
+    [SerializeField] TextMeshProUGUI quesitonTxt;
+    [SerializeField] TextMeshProUGUI[] optionsBtn = new TextMeshProUGUI[MAX_OPTIONS_COUNT];
+    [SerializeField] TextMeshProUGUI correctCountTxt;
+    [SerializeField] TextMeshProUGUI wrongCountTxt;
     ButtonManager bm;
 
     int correctCount, wrongCount;
     List<string> questions = new List<string>();
-    string[,] options = new string[MAX_QUESTION_COUNT, 5];
+    List<string> option = new List<string>();
+    List<List<string>> options = new List<List<string>>();
     List<int> correctOptions = new List<int>();
 
     int rndQuestion;
@@ -25,34 +34,58 @@ public class GameManager : MonoBehaviour
         questions.Add("Gerçek yetenek yarışmasında en fazla oy toplayan üç yarışmacı hangileridir?");
         questions.Add("Gerçek yetenek yarışmasında en az oy alan yarışmacı kimdir?");
 
-        options[0, 0] = "Elif, Can ve Levent";
-        options[0, 1] = "Mine, Elif ve Can";
-        options[0, 2] = "Elif, Ramazan ve Can";
-        options[0, 3] = "Mine, Ramazan ve Elif";
-        options[0, 4] = "Can, Mine ve Ramazan";
+        option.Add("Elif, Can ve Levent");
+        option.Add("Mine, Elif ve Can");
+        option.Add("Elif, Ramazan ve Can");
+        option.Add("Mine, Ramazan ve Elif");
 
-        options[1, 0] = "Levent";
-        options[1, 1] = "Can";
-        options[1, 2] = "Elif";
-        options[1, 3] = "Mine";
-        options[1, 4] = "Ramazan";
+        option.Add("Levent");
+        option.Add("Can");
+        option.Add("Elif");
+        option.Add("Ramazan");
+
+        for (int i = 0; i < MAX_QUESTION_COUNT; i++)
+        {
+            List<string> copyList = new List<string>();
+            for (int j = i * MAX_OPTIONS_COUNT; j < MAX_OPTIONS_COUNT + i * MAX_OPTIONS_COUNT; j++) copyList.Add(option[j]);
+            options.Add(copyList);
+        }
 
         correctOptions.Add(3);
         correctOptions.Add(1);
 
-        rndQuestion = Random.Range(0, 2);
+        rndQuestion = Random.Range(0, MAX_QUESTION_COUNT);
 
         NextQuestion(rndQuestion);
     }
 
     public void NextQuestion(int questionNumber)
     {
+        quesitonTxt.text = questions[questionNumber];
 
+        for (int i = 0; i < MAX_OPTIONS_COUNT; i++) optionsBtn[i].text = options[questionNumber][i];
     }
 
     public void CheckAnswer(int answerNumber)
     {
         if (answerNumber == correctOptions[rndQuestion]) correctCount++;
         else wrongCount++;
+
+        if (correctCount + wrongCount != MAX_QUESTION_COUNT)
+        {
+            questions.RemoveAt(rndQuestion);
+            correctOptions.RemoveAt(rndQuestion);
+            options.RemoveAt(rndQuestion);
+
+            rndQuestion = Random.Range(0, MAX_QUESTION_COUNT - correctCount - wrongCount);
+            NextQuestion(rndQuestion);
+        }
+        else
+        {
+            bm.DestroyCard();
+            resultPanel.SetActive(true);
+            correctCountTxt.text += correctCount.ToString();
+            wrongCountTxt.text += wrongCount.ToString();
+        }
     }
 }

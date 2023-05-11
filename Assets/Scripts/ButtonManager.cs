@@ -45,4 +45,9 @@ public class ButtonManager : MonoBehaviour
             GetCard(nextCardNumber);
         }
     }
+
+    public void DestroyCard()
+    {
+        Destroy(card);
+    }
 }

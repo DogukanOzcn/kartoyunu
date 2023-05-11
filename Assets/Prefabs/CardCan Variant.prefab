@@ -33,6 +33,16 @@ PrefabInstance:
       propertyPath: m_text
       value: Can
       objectReference: {fileID: 0}
+    - target: {fileID: 5593317701926743677, guid: 28d6eae6888dbb843acd58bdf6e61717,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 7.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593317701926743677, guid: 28d6eae6888dbb843acd58bdf6e61717,
+        type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: 97690656
+      objectReference: {fileID: 0}
     - target: {fileID: 5593317702282089652, guid: 28d6eae6888dbb843acd58bdf6e61717,
         type: 3}
       propertyPath: m_Color.b
