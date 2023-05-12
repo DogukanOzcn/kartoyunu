@@ -15,11 +15,6 @@ public class ButtonManager : MonoBehaviour
 
     [SerializeField] GameObject[] cards = new GameObject[CARD_COUNT];
 
-    void Awake()
-    {
-        GetCard(0);
-    }
-
     public void GetCard(int number)
     {
         cardOut = false;

@@ -16,7 +16,7 @@ android {
     defaultConfig {
         minSdkVersion 22
         targetSdkVersion 30
-        applicationId 'com.Dogu.KartGame'
+        applicationId 'com.Dogu.GercekYetenek'
         ndk {
             abiFilters 'armeabi-v7a'
         }

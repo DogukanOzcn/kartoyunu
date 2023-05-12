@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     const int MAX_QUESTION_COUNT = 2;
     const int MAX_OPTIONS_COUNT = 4;
 
+    [SerializeField] GameObject storyPanel;
     [SerializeField] GameObject resultPanel;
     [SerializeField] TextMeshProUGUI quesitonTxt;
     [SerializeField] TextMeshProUGUI[] optionsBtn = new TextMeshProUGUI[MAX_OPTIONS_COUNT];
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour
 
         rndQuestion = Random.Range(0, MAX_QUESTION_COUNT);
 
+        StartCoroutine(DestroyStoryPanel());
         NextQuestion(rndQuestion);
     }
 
@@ -87,5 +89,12 @@ public class GameManager : MonoBehaviour
             correctCountTxt.text += correctCount.ToString();
             wrongCountTxt.text += wrongCount.ToString();
         }
+    }
+
+    IEnumerator DestroyStoryPanel()
+    {
+        yield return new WaitForSeconds(8f);
+        Destroy(storyPanel);
+        bm.GetCard(0);
     }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "applicationId": "com.Dogu.KartGame",
+  "applicationId": "com.Dogu.GercekYetenek",
   "variantType": "BASE_APK",
   "elements": [
     {
@@ -19,7 +19,7 @@
       },
       "path": "AndroidManifest.xml",
       "properties": {
-        "packageId": "com.Dogu.KartGame",
+        "packageId": "com.Dogu.GercekYetenek",
         "split": "",
         "minSdkVersion": "22"
       }

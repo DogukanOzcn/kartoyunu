@@ -1,4 +1,4 @@
-com.Dogu.KartGame
+com.Dogu.GercekYetenek
 id unitySurfaceView
 mipmap app_icon
 mipmap app_icon_round
