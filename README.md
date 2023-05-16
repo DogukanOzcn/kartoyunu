@@ -1,3 +1,3 @@
 # kartoyunu
 
-![Oyun Ekran Görüntüsü](screenshots/anamenu.jpeg  width=50%)
+<img src="screenshots/anamenu.jpeg" alt="Oyun Ekran Görüntüsü" width="300">
