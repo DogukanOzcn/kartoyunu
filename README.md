@@ -1,3 +1,3 @@
 # kartoyunu
 
-![Oyun Ekran Görüntüsü](screenshots/anamenujpeg)
+![Oyun Ekran Görüntüsü](screenshots/anamenu.jpeg)
