@@ -4,6 +4,12 @@ Bu proje, Doğukan Özcan tarafından Fırat Üniversitesi Yazılım Mühendisli
 - Unity
 - Visual Studio 2019
 - C#
+## PROJE KONUSU OLAN KART
+<p align="left">
+  <img src="KARTIM.png" alt="Açıklama" width="450" height="450" />
+</p>
+Bu projenin konusu olan karta <a href="https://github.com/DogukanOzcn/kartoyunu/blob/main/KARTIM.png" target="_blank" onclick="window.open('https://github.com/DogukanOzcn/kartoyunu/blob/main/KARTIM.png'); return false;">buraya tıklayarak</a> erişebilirsiniz
+
 
 ## Oyun amacı
 - Verilen oyları istenilen soruya göre işleme sokarak her yarışmacı için sonuçlar bulmak
